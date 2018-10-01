@@ -1,0 +1,17 @@
+
+Aplicación local-bin
+   El propósito de este proyecto es tratar de encapsular en un solo archivo (archivodescargado.tar.gz) la aplicación local-bin.
+
+Notas de instalación.
+
+1) Desplegar el archivo descargado.
+   Antes de extraer el archivo es necesario borrar la carpeta de la actualización anterior si existe, por ejemplo
+   # rm -rf /usr/local/local-bin-1.2
+   Extraer el archivo descargado archivodescargado.tar.gz con privilegios de superusuario (root) en algún directorio compartido, por ejemplo
+   # cd /usr/local
+   # tar xvf [carpeta de descargas]/archivodescargado.tar.gz
+
+2) Linkar los Shell scripts con /usr/local/bin.
+   La primera vez que ejecutamos linklocal hay que hacerlo con todo el PATH en la línea de comando:
+    # /usr/local/local-bin-1.2/alfa-bin/linklocal
+   Posteriormente, con escribir # linklocal será suficiente.

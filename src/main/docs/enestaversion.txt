@@ -1,0 +1,21 @@
+======================================================
+
+local-bin.aplicacion=Bin
+local-bin.version=1.2
+local-bin.carpeta=local-bin-1.2
+
+http://129.0.0.1:32080/repository/alfa/es/alfamicroges/utilidades/local-bin/1.2/
+
+Shell scripts comunes para todas las aplicaciones
+
+======================================================
+alfa.actualizacion=20170404-Martes
+    - Inicialmente:
+        desmotar            #Desmonta el filesystem del host ${1}
+        linkjava            #Enlaza /usr/java/latest/bin a /usr/bin
+        linklocal           #Enlaza /usr/local/*/alfa-bin a /usr/local/bin
+        remontar            #Monta un filesystem del host ${1} en /DATOS/MONTADOS
+        nunexe
+======================================================
+
+

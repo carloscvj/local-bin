@@ -1,0 +1,32 @@
+#!/bin/sh
+
+#--------FUNCTIONS--------------------------------------------------
+say() {
+if [ "${args}" ]
+    then
+        nada=""
+    else
+        echo ${*}
+fi
+}
+#------END FUNCTIONS-----------------------------------------------------
+
+say "--------------------------------------------------------------------"
+
+if [ "${INSTALACION}" ]
+then
+	say "INSTALACION=${INSTALACION}"
+else
+	export INSTALACION=/usr/local;say "INSTALACION=${INSTALACION}"
+fi
+say "--------------------------------------------------------------------"
+
+
+for i in "${INSTALACION}"/*/alfa-bin/*
+do
+    p=`basename ${i}`
+    rm -f "${INSTALACION}"/bin/${p}
+    echo "ln -s ${i} ${INSTALACION}/bin/${p}"
+    ln -s ${i} "${INSTALACION}"/bin/${p}
+done
+say "--------------------------------------------------------------------"

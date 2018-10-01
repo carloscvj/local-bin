@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo
+echo
+echo "          Anote el error y pulse ENTER para continuar"
+read tecla

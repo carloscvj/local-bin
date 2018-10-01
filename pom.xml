@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>es.cvjpy.maven</groupId>
+        <artifactId>targz</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>es.cvjpy.utilidades</groupId>
+    <artifactId>local-bin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <properties>
+        <project.dkt.version>1.0</project.dkt.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <name>local-bin - Shell scripts comunes para todas las aplicaciones</name>
+    <description>Shell scripts comunes para todas las aplicaciones</description>
+    
+    <build>         
+        <plugins>
+            <plugin>            
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>           
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+                      
+        </plugins>           
+    </build>
+    
+</project>

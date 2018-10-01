@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="distribuir" default="distribuir">
+  
+    <target name="propiedades" >
+        <property name="local-bin.carpeta" value="${project.artifactId}-${project.dkt.version}"/>
+    </target>
+    
+    <target name="init" depends="propiedades">
+        <property name="distribuir.destino" value="${user.home}/local/${local-bin.carpeta}"/>
+        <!--<property name="distribuir.destino" value="/usr/local/${local-bin.carpeta}"/>-->
+        <echo level="info" message="--------------------------------------------------------------------------"></echo>
+        <echo level="info" message="basedir=${basedir}"></echo>
+        <echo level="info" message="local-bin.carpeta=${local-bin.carpeta}"></echo>
+        <echo level="info" message="distribuir.destino=${distribuir.destino}"></echo>
+        <echo level="info" message="--------------------------------------------------------------------------"></echo>
+    </target>
+  
+    <target name="distribuir" depends="init">
+        
+        <copy todir="${distribuir.destino}/base-bin" verbose="true">
+            <fileset dir="src/main/base-bin"></fileset>
+        </copy>
+                
+        <exec executable="chmod">
+            <arg value="-R"/>
+            <arg value="ugo+x"/>
+            <arg value="${distribuir.destino}/base-bin"/>
+        </exec>              
+    </target>
+
+</project>
