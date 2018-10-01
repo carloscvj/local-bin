@@ -22,7 +22,7 @@ fi
 say "--------------------------------------------------------------------"
 
 
-for i in "${INSTALACION}"/*/alfa-bin/*
+for i in "${INSTALACION}"/*/base-bin/*
 do
     p=`basename ${i}`
     rm -f "${INSTALACION}"/bin/${p}
