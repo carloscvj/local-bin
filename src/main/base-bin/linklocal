@@ -20,7 +20,7 @@ else
 	export INSTALACION=/usr/local;say "INSTALACION=${INSTALACION}"
 fi
 say "--------------------------------------------------------------------"
-
+say "              L I N K A N D O   bin"
 
 for i in "${INSTALACION}"/*/base-bin/*
 do
@@ -28,5 +28,15 @@ do
     rm -f "${INSTALACION}"/bin/${p}
     echo "ln -s ${i} ${INSTALACION}/bin/${p}"
     ln -s ${i} "${INSTALACION}"/bin/${p}
+done
+say "--------------------------------------------------------------------"
+say "              L I N K A N D O   lib"
+
+for i in "${INSTALACION}"/*/base-lib/*
+do
+    p=`basename ${i}`
+    rm -f "${INSTALACION}"/lib/${p}
+    echo "ln -s ${i} ${INSTALACION}/lib/${p}"
+    ln -s ${i} "${INSTALACION}"/lib/${p}
 done
 say "--------------------------------------------------------------------"
